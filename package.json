@@ -1,0 +1,13 @@
+{
+  "name": "dash-coffee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "@slack/client": "^3.6.1",
+    "node-dash-button": "^0.6.1"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}
