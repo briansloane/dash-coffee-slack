@@ -14,14 +14,14 @@ dash.on("detected", function (){
 		"text": "Fresh pot of coffee is ready! :coffee:"
 	}
 
-	sendWebhook = function () {  
+  sendWebhook = function () {  
     webhook.send(payload, function(err, res) {
 	    if (err) {
 	        console.log('Error:', err);
 	    } else {
 	        console.log('Message sent: ', res);
-	    }
+      }
     });
-	}    
+  }    
   setTimeout(sendWebhook, twelveMins);
 });
