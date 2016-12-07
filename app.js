@@ -7,17 +7,21 @@ var dash = dash_button(address, null, null, 'all');
 var IncomingWebhook = require('@slack/client').IncomingWebhook;
 var url = process.env.SLACK_WEBHOOK_URL || '';
 var webhook = new IncomingWebhook(url);
+var twelveMins = 12 * 60 * 1000 // 12 minutes to brew a pot
 
 dash.on("detected", function (){
 	payload={
 		"text": "Fresh pot of coffee is ready! :coffee:"
 	}
 
-	webhook.send(payload, function(err, res) {
+  sendWebhook = function () {  
+    webhook.send(payload, function(err, res) {
 	    if (err) {
 	        console.log('Error:', err);
 	    } else {
 	        console.log('Message sent: ', res);
-	    }
-	});    
+      }
+    });
+  }    
+  setTimeout(sendWebhook, twelveMins);
 });
