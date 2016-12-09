@@ -11,7 +11,7 @@ var twelveMins = 12 * 60 * 1000 // 12 minutes to brew a pot
 
 dash.on("detected", function (){
 	payload={
-		"text": "Fresh pot of coffee is ready! :coffee:"
+		"text": "Fresh pot of coffee is ready! :coffeemug:"
 	}
 
   sendWebhook = function () {  
